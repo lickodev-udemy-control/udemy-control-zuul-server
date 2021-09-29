@@ -29,8 +29,7 @@ pipeline {
 
                     //withMaven(maven: '')
                     sh 'mvn clean package -DskipTests -B -ntp'
-                ontrackBranchName(BRANCH_NAME)
-                echo "Ontrack branch name = ${branchName}"
+                echo "Ontrack branch name = ${env.BRANCH_NAME}"
                     archiveArtifacts(artifacts: 'target/*.jar', excludes: '**/maven-wrapper.jar')
 
             // To run Maven on a Windows agent, use
