@@ -13,7 +13,7 @@ pipeline {
         jdk 'openjdk-14'
     }
     stages {
-        stage('Build') {
+        stage('Construccion') {
             /**
             DOCUMENTACION DE TOOLS POR STAGE
             https://stackoverflow.com/questions/47895668/how-to-select-multiple-jdk-version-in-declarative-pipeline-jenkins
