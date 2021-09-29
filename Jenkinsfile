@@ -28,7 +28,7 @@ pipeline {
                 //echo 'Hello'
 
                     //withMaven(maven: '')
-                    sh 'mvn clean package -DskipTests -B -ntp -e'
+                    sh 'mvn clean package -DskipTests -B -ntp'
 
                     archiveArtifacts(artifacts: 'target/*.jar', excludes: '**/maven-wrapper.jar')
 
