@@ -29,8 +29,13 @@ pipeline {
 
                     //withMaven(maven: '')
                     sh 'mvn clean package -DskipTests -B -ntp'
-                echo "Ontrack branch name = ${env.BRANCH_NAME}"
+                    //https://stackoverflow.com/questions/32789619/what-is-the-branch-name-variable-for-jenkins-multibranch-pipelines
+                    echo "Ontrack branch name = ${env.BRANCH_NAME}"
+                    //https://www.jenkins.io/doc/pipeline/steps/core/
                     archiveArtifacts(artifacts: 'target/*.jar', excludes: '**/maven-wrapper.jar')
+
+                    
+                    //https://www.jenkins.io/doc/book/pipeline/multibranch/
 
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
